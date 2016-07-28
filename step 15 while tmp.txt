@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N, i = 0, max = 0, min = 0;
+	cin >> N;
+	min = N;
+	max = N;
+	cout << "-----1.i = " << i << " " << "min = " << min << " " << "max = " << max << "\n";
+	while (N != 0)
+	{
+		cin >> N;
+		if (N == 0)
+		{
+			break;
+		}
+		else if (N == max)
+		{
+			//min = max;
+			max = N;
+			cout << "-----2.i = " << i << " " << "min = " << min << " " << "max = " << max << "\n";
+		}
+		else if (N > max)
+		{
+			min = max;
+			max = N;
+			cout << "-----3.i = " << i << " " << "min = " << min << " " << "max = " << max << "\n";
+		}
+		else if (N < min)
+		{
+			max = min;
+			min = N;
+			cout << "-----4.i = " << i << " " << "min = " << min << " " << "max = " << max << "\n";
+		}
+		else if (N < max)
+		{
+			max = min;
+			min = N;
+			i++;
+			cout << "-----5.i = " << i << " " << "min = " << min << " " << "max = " << max << "\n";
+		}
+	}
+	cout << i;
+	system("pause");
+}
